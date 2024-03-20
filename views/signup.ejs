@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Twitter Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #fff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            transition: transform 0.8s ease-in-out, box-shadow 0.9s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="file"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="file"]:focus,
+        input[type="date"]:focus {
+            background-color: #444;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"] + label {
+            display: inline-block;
+            margin-right: 15px;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        input[type="radio"]:checked + label {
+            color: #007bff;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .signup-link a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Twitter Account</h1>
+        <h3><%=errmsg%></h3>
+        <form action="/signup_submit" method="post" enctype="multipart/form-data"> 
+            <label for="profilepic">Upload Profile Pic</label>
+            <input type="file" name="profilepic"> 
+                <!-- Display the image-->
+            
+             
+
+            <label for="fname">Enter First Name</label>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="mname">Enter Middle Name</label>
+            <input type="text" id="mname" name="mname">
+
+            <label for="lname">Enter Last Name</label>
+            <input type="text" id="lname" name="lname" required>
+
+            <label for="email">Enter Mobile or Email</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="password">Enter Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" id="cpassword" name="cpassword" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label>Gender</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+
+            <input type="radio" id="others" name="gender" value="others" required>
+            <label for="others">Others</label>
+
+            <label for="username">Enter Username</label>
+            <input type="text" id="username" name="username" required>
+            
+            <input type="submit" value="Register">
+        </form>
+        <div class="signup-link">Already have an account? <a href="/">Login</a></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            transition: transform 0.8s ease-in-out, box-shadow 0.9s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+        }
+
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: color 0.2s;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        input[type="file"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s, box-shadow 0.3s; 
+        }
+
+        input[type="file"]:focus,
+        input[type="submit"]:focus {
+            background-color: #444;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit the Profile Picture</h2>
+        <form action="/edit_profilepic_submit" method="post" enctype="multipart/form-data">
+        <tr>
+            <td><input type="file" name="profilepic"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="Update Profile Picture"></td>
+        </tr>
+        </form>
+    </div>
+</body>
+</html>
